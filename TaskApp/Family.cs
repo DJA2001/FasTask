@@ -14,9 +14,19 @@ namespace TaskApp
     public partial class Family : Form
     {
         familyClass family = new familyClass();
+        List<familyClass> familyComboList = new List<familyClass>();
         public Family()
         {
             InitializeComponent();
+            LoadComboFamily();
+        }
+
+        private void LoadComboFamily()
+        {
+            familyComboList = SqliteDataAccess.LoadFamily();
+            comboBoxManage.DataSource = familyComboList;
+            comboBoxManage.DisplayMember = "FamilyMember";
+            comboBoxManage.DisplayMember = "FamilyMember";
         }
 
         private void btnFamily_Click(object sender, EventArgs e)
@@ -25,6 +35,15 @@ namespace TaskApp
             SqliteDataAccess.SaveFamily(family);
             MessageBox.Show("Successfully Added Family Member");
             this.Close();
+        }
+
+        private void btnFamilyDelete_Click(object sender, EventArgs e)
+        {
+            family.FamilyMember = comboBoxManage.Text;
+            SqliteDataAccess.DeleteFamily(family);
+            MessageBox.Show("Successfully Deleted Family Member");
+            this.Close();
+
         }
     }
 }

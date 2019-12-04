@@ -1,16 +1,14 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TaskApp.TigerTaskClasses;
-using System.Configuration;
 using System.Data.SQLite;
 using Dapper;
+using Squirrel;
+using System.Diagnostics;
 
 // This is the code for your desktop app.
 // Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
@@ -30,6 +28,20 @@ namespace TaskApp
             dgvColumns();
         }
 
+        private void AddVersionNumber()
+        {
+            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(assembly.Location);
+            this.Text += $" v.{ versionInfo.FileVersion }";
+        }
+
+        private async Task CheckforUpdates()
+        {
+            using(var manager = new UpdateManager(@"C:\Users\daraujo"))
+            {
+                await manager.UpdateApp();
+            }
+        }
 
         public void newTaskButton_Click(object sender, EventArgs e)
         {

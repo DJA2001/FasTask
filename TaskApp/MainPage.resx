@@ -220,7 +220,7 @@
     <value>5</value>
   </data>
   <data name="btn_FamilyAdd.Text" xml:space="preserve">
-    <value>Add Family Member</value>
+    <value>Manage Family Members</value>
   </data>
   <data name="&gt;&gt;btn_FamilyAdd.Name" xml:space="preserve">
     <value>btn_FamilyAdd</value>

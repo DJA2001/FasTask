@@ -31,6 +31,9 @@
             this.btnFamily = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFamily = new System.Windows.Forms.TextBox();
+            this.comboBoxManage = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnFamilyDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnFamily
@@ -62,12 +65,44 @@
             this.txtFamily.Size = new System.Drawing.Size(219, 20);
             this.txtFamily.TabIndex = 2;
             // 
+            // comboBoxManage
+            // 
+            this.comboBoxManage.FormattingEnabled = true;
+            this.comboBoxManage.Location = new System.Drawing.Point(147, 138);
+            this.comboBoxManage.Name = "comboBoxManage";
+            this.comboBoxManage.Size = new System.Drawing.Size(141, 21);
+            this.comboBoxManage.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(8, 133);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(133, 24);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Select Existing";
+            // 
+            // btnFamilyDelete
+            // 
+            this.btnFamilyDelete.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnFamilyDelete.Location = new System.Drawing.Point(12, 165);
+            this.btnFamilyDelete.Name = "btnFamilyDelete";
+            this.btnFamilyDelete.Size = new System.Drawing.Size(283, 46);
+            this.btnFamilyDelete.TabIndex = 5;
+            this.btnFamilyDelete.Text = "Delete Family Member (Tasks Will Stay)";
+            this.btnFamilyDelete.UseVisualStyleBackColor = false;
+            this.btnFamilyDelete.Click += new System.EventHandler(this.btnFamilyDelete_Click);
+            // 
             // Family
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
-            this.ClientSize = new System.Drawing.Size(307, 131);
+            this.ClientSize = new System.Drawing.Size(307, 230);
+            this.Controls.Add(this.btnFamilyDelete);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.comboBoxManage);
             this.Controls.Add(this.txtFamily);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnFamily);
@@ -84,5 +119,8 @@
         private System.Windows.Forms.Button btnFamily;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtFamily;
+        private System.Windows.Forms.ComboBox comboBoxManage;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnFamilyDelete;
     }
 }

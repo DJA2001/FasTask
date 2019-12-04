@@ -46,6 +46,15 @@ namespace TaskApp
 
         }
 
+        public static void DeleteFamily(familyClass family)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("delete from tbl_family where FamilyMember=@FamilyMember", family);
+            }
+
+        }
+
         public static void Delete(taskClass task)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
